@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<body>
+
+  <div class="page-header">
+    <h1>The Weather   <small>... it's real simple.</small></h1>
+  </div>
+
+<div id="container">
+
+  <div class="row">
+    <div class="column col-xs-12 col-sm-3 col-md-3">
+      <div class="title city"></div>
+      <div class="title state"></div>
+      <div class="form-group">
+        <label for="inputTask"></label>
+        <input id="zip" type="number" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter Zip Code" value="zip" min="5" max="5" required>
+        <button id="newEntry" class="btn btn-info">: )</button>
+      </div>
+      <div id="zipCode"></div>
+      <div>Current Temp: </div>
+      <div id="temp"></div>
+    </div>
+
+    <!-- <div class=" column col-xs-12 col-sm-3 col-md-3">
+      <ul id="zipList">My City List
+        <li>whatever</li>
+        <li>whatever</li>
+        <li>whatever</li>
+        <li>whatever</li>
+        <li>whatever</li>
+      </ul>
+    </div> -->
+
+    <div class="col-sm-offset-1 col-md-offset-2 col-xs-12 col-sm-5 col-md-4">
+      <div id="bill"><img src="img/bill.jpg" alt=""></div>
+      <blockquote>
+        <p>"Don't think too much"</p>
+        <footer>Bill Murray</footer>
+      </blockquote>
+    </div>
+  </div>
+  <hr>
+  <div id="grid" class="row">
+
+    <div class=" column col-xs-12 col-sm-3 col-md-3">
+      <h4>My Past City Searches</h4>
+      <ul id="zipList">
+        <li>whatever</li>
+        <li>whatever</li>
+        <li>whatever</li>
+        <li>whatever</li>
+        <li>whatever</li>
+      </ul>
+    </div>
+
+    <div class="forecast1 col-xs-12 col-sm-3 col-md-3"><img src="img/elmo.jpeg" alt=""></div>
+    <div class="forecast2 col-xs-12 col-sm-3 col-md-3"><img src="img/Elmoweather.gif" alt=""></div>
+    <div class="forecast3 col-xs-12 col-sm-3 col-md-3"><img src="img/elmo3.jpg" alt=""></div>
+
+  </div>
+
+  <div id="space_container" class="row">
+    <div class="forecast1 col-xs-12 col-sm-6 col-md-6">
+      <h4>Your Current Star Chart</h4>
+      <div id="stars"></div>
+    </div>
+    <div class="forecast2 col-xs-12 col-sm-6 col-md-6"><img id="wu" src="img/wu-astronauts.jpg" alt=""></div>
+  </div>
+
+</div>
+
+  <script src="http://momentjs.com/downloads/moment.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- <script src="main.js"></script> -->
+</body>
+</html>
