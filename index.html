@@ -16,8 +16,11 @@
 
   <div class="row">
     <div class="column col-xs-12 col-sm-3 col-md-3">
-      <div class="title city"></div>
-      <div class="title state"></div>
+      <div class="row">
+        <p>Your Current Location:</p>
+        <div class="title city"></div>
+        <div class="title state"></div>
+      </div>
       <div class="form-group">
         <label for="inputTask"></label>
         <input id="city" type="name" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter City Name" value="" required>
@@ -26,7 +29,7 @@
         <button id="newEntry" class="btn btn-info">: )</button>
       </div>
       <div id="zipCode"></div>
-      <div>Current Temp: </div>
+      <p>Your Current Temp:</p>
       <div id="temp"></div>
     </div>
 
@@ -54,15 +57,21 @@
     <div class=" column col-xs-12 col-sm-3 col-md-3">
       <div class="past pastCity"></div>
       <div class="past pastState"></div>
-      <h4>My Past City Searches</h4>
+      <h4>My Past Location Searches</h4>
       <ul id="zipList">
         <li>whatever</li>
       </ul>
     </div>
 
-    <div class="forecast1 col-xs-12 col-sm-3 col-md-3"><img src="img/elmo.jpeg" alt=""></div>
-    <div class="forecast2 col-xs-12 col-sm-3 col-md-3"><img src="img/Elmoweather.gif" alt=""></div>
-    <div class="forecast3 col-xs-12 col-sm-3 col-md-3"><img src="img/elmo3.jpg" alt=""></div>
+    <div class="col-xs-12 col-sm-3 col-md-3">
+      <img src="img/elmo.jpeg" alt=""><div class="forecast1"></div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3">
+      <img src="img/Elmoweather.gif" alt=""><div class="forecast2"></div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3">
+      <img src="img/elmo3.jpg" alt=""><div class="forecast3"></div>
+    </div>
 
   </div>
 
