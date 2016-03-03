@@ -25,23 +25,13 @@
         <label for="inputTask"></label>
         <input id="city" type="name" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter City Name" value="" required>
         <input id="state" type="name" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter State" value="" required>
-        <!-- <input id="zip" type="number" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter Zip Code" value="zip" min="5" max="5" required> -->
+
         <button id="newEntry" class="btn btn-info">: )</button>
       </div>
       <div id="zipCode"></div>
       <p>Your Current Temp:</p>
       <div id="temp"></div>
     </div>
-
-    <!-- <div class=" column col-xs-12 col-sm-3 col-md-3">
-      <ul id="zipList">My City List
-        <li>whatever</li>
-        <li>whatever</li>
-        <li>whatever</li>
-        <li>whatever</li>
-        <li>whatever</li>
-      </ul>
-    </div> -->
 
     <div class="col-sm-offset-1 col-md-offset-2 col-xs-12 col-sm-5 col-md-4">
       <div id="bill"><img src="img/bill.jpg" alt=""></div>
@@ -58,9 +48,9 @@
       <div class="past pastCity"></div>
       <div class="past pastState"></div>
       <h4>My Past Location Searches</h4>
-      <ul id="zipList">
-        <li>whatever</li>
-      </ul>
+      <ul id="zipList"></ul>
+      <p>*click to get your past location's weather</p>
+      <p>**double click to delete a past location</p>
     </div>
 
     <div class="col-xs-12 col-sm-3 col-md-3">
@@ -75,14 +65,13 @@
 
   </div>
 
-  <div id="space_container" class="row">
+  <!-- <div id="space_container" class="row">
     <div class="col-xs-12 col-sm-6 col-md-6">
       <h4>Your Current Star Chart</h4>
       <div id="stars"></div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6"><img id="wu" src="img/wu-astronauts.jpg" alt=""></div>
-  </div>
-
+  </div> -->
 </div>
 
   <script src="http://momentjs.com/downloads/moment.js"></script>
