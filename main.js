@@ -2,7 +2,11 @@
 'use strict';
 $(document).ready(init);
 
+var zipArray = [];
+
 function init() {
+  loadFromStorage();
+  updateList();
   $('#newEntry').on('click', getZip);
   $.ajax({
       url:"http://api.wunderground.com/api/fa798b8605df3bb3/geolookup/q/autoip.json",
@@ -20,7 +24,49 @@ function init() {
     });
   getForecast();
   // ('#zip').on('click', zipClicked);
+  // ('#zip').on('click', zipClicked);
 }
+
+function loadFromStorage() {
+  if(!localStorage.zipArray) {
+    localStorage.zipArray = '[]';
+  }
+  zipArray = JSON.parse(localStorage.zipArray);
+}
+
+function getZip() {
+  $('#zipList').empty();
+  var zip = $('#zip').val();
+  zipArray.push(zip);
+  $('#zip').empty();
+  saveToStorage();
+  updateList();
+  // zip = data.location.zip;
+  console.log(zip);
+  console.log(zipArray);
+}
+
+function saveToStorage() {
+  localStorage.zipArray = JSON.stringify(zipArray);
+}
+
+function updateList() {
+  var $zips = zipArray.map(function(zip, index) {
+    var $li = $('<li>').text(zip);
+    $('#zipList').append($li);
+    console.log("li", $li);
+  })
+  console.log("list", zipList);
+  console.log("zips", $zips);
+}
+
+
+//function to remove a city
+// add a check box
+function removeEntries() {
+  $('input:checked').closest('li').remove();
+}
+
 function getConditions() {
   $.ajax({
        url:"http://api.wunderground.com/api/fa798b8605df3bb3/conditions/q/CA/San_Francisco.json",
@@ -35,34 +81,35 @@ function getConditions() {
   getConditions();
 
 function getZip() {
-  var zip = $('#zip').val();
-  // zip = data.location.zip;
-  console.log(zip);
-}
-
-
-// function getZip() {
-//   var zip = $('#newEntry').val();
-//   $.ajax({
-//     url:"http://api.wunderground.com/api/fa798b8605df3bb3/geolookup/q/" + zip ".json",
-//     type: "GET",
-//     // contentType:"jsonp",
-//     success: function(data) {
-//       console.log(data);
-//       var $zip =  $('<p>').text("Currtent zip " + data.location.zip);
-//     	console.log($zip);
-//     	$('#zipCode').append($zip);
-//   	}
-//   });
-// }
-
-
-function getForecast() {
+  var zip = $('#newEntry').val();
   $.ajax({
-    url:"http://api.wunderground.com/api/fa798b8605df3bb3/forecast/q/94107.json",
+    url:"http://api.wunderground.com/api/fa798b8605df3bb3/geolookup/q/" + zip + ".json",
     type: "GET",
     // contentType:"jsonp",
     success: function(data) {
+      console.log(data);
+      var $zip =  $('<p>').text("Currtent zip " + data.location.zip);
+    	console.log($zip);
+    	$('#zipCode').append($zip);
+  	}
+  });
+}
+
+
+function getForecast() {
+  var zip = $('#newEntry').val();
+  $.ajax({
+    url:"http://api.wunderground.com/api/fa798b8605df3bb3/forecast/q/94107.json",
+    // url:"http://api.wunderground.com/api/fa798b8605df3bb3/forecast/q/" + zip + ".json",
+    type: "GET",
+    // contentType:"jsonp",
+    success: function(data) {
+      var $city =  $('<p>').text(data.location.city);
+      var $state = $('<p>').text(data.location.state);
+      console.log($city);
+      console.log($state);
+      $('.pastCity').append($city);
+      $('.pastState').append($state);
       console.log(data);
       var $highDay1 = $('<p>').text("Hi " +  data.forecast.simpleforecast.forecastday[0].high.fahrenheit);
       var $highDay2 = $('<p>').text("Hi " + data.forecast.simpleforecast.forecastday[1].high.fahrenheit);
