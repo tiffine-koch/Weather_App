@@ -37,8 +37,8 @@ function getZip() {
   var realLocation = location.replace("," , "");
 
   zipArray.push(realLocation);
-  $('#city').empty();
-  $('#state').empty();
+  // $('#city').empty();
+  // $('#state').empty();
   saveToStorage();
   updateList();
   getForecast();
@@ -55,13 +55,14 @@ function updateList() {
       var state =  zip.slice(2);
       var $li = $('<li>').text(city + ", " + state).addClass('saved');
       $('#zipList').append($li);
+      // $('#city').append(city);
+      // $('#state').append(state);
+
     })
 }
 
 function deleteLocation() {
   $(this).closest('li').remove();
-  // var $this = $(this);
-  // $this.closest('li').remove();
   // localStorage.removeItem($this);
 }
 
@@ -95,6 +96,8 @@ function getForecast() {
     type: "GET",
 
     success: function(data) {
+      console.log(city);
+      console.log(state);
       var $city =  $('<p>').text(city);
       var $state = $('<p>').text(state);
       $('.pastCity').append($city);
@@ -120,13 +123,16 @@ function getForecast() {
     	$('.forecast3').append($highDay3);
     	$('.forecast3').append($lowDay3);
     	$('.forecast3').append($conditionsDay3);
+
+      $('#city').val('');
+      $('#state').val('');
   	}
   });
 }
 
 function clearHouse() {
-  $('#city').val('');
-  $('#state').val('');
+  // $('#city').val();
+  // $('#state').val();
   $('.forecast1').empty();
   $('.forecast2').empty();
   $('.forecast3').empty();
