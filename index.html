@@ -20,7 +20,9 @@
       <div class="title state"></div>
       <div class="form-group">
         <label for="inputTask"></label>
-        <input id="zip" type="number" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter Zip Code" value="zip" min="5" max="5" required>
+        <input id="city" type="name" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter City Name" value="" required>
+        <input id="state" type="name" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter State" value="" required>
+        <!-- <input id="zip" type="number" class="form-control col-xs-2 col-sm-2 col-md-2" placeholder="Enter Zip Code" value="zip" min="5" max="5" required> -->
         <button id="newEntry" class="btn btn-info">: )</button>
       </div>
       <div id="zipCode"></div>
@@ -50,8 +52,8 @@
   <div id="grid" class="row">
 
     <div class=" column col-xs-12 col-sm-3 col-md-3">
-      <div class="past city"></div>
-      <div class="past state"></div>
+      <div class="past pastCity"></div>
+      <div class="past pastState"></div>
       <h4>My Past City Searches</h4>
       <ul id="zipList">
         <li>whatever</li>
