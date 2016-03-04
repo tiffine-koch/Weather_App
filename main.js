@@ -55,20 +55,23 @@ function updateList() {
       var state =  zip.slice(2);
       var $li = $('<li>').text(city + ", " + state).addClass('saved');
       $('#zipList').append($li);
-      // $('#city').append(city);
-      // $('#state').append(state);
-
     })
 }
 
 function deleteLocation() {
   $(this).closest('li').remove();
   // localStorage.removeItem($this);
+  //splice method to splice on delete from DOM that array
+  // grab index from of what's clicked
+  //splice array
+  //saveToStorage()
 }
 
 function getPastLocation() {
   city = $(this).text();
   state = $(this).text();
+  $('#city').append(city);
+  $('#state').append(state);
   console.log('past', city);
   console.log('past', state);
   getForecast();
@@ -102,6 +105,12 @@ function getForecast() {
       var $state = $('<p>').text(state);
       $('.pastCity').append($city);
       $('.pastState').append($state);
+      //group by day, duplicate functionality
+      //.map append all three things per day
+      //tie all appending per day into one function
+      for(var i = 0; i < 3; i++) {
+
+      }
       var $highDay1 = $('<p>').text("Hi " +  data.forecast.simpleforecast.forecastday[0].high.fahrenheit);
       var $highDay2 = $('<p>').text("Hi " + data.forecast.simpleforecast.forecastday[1].high.fahrenheit);
       var $highDay3 = $('<p>').text("Hi " + data.forecast.simpleforecast.forecastday[2].high.fahrenheit);
