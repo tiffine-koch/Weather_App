@@ -37,8 +37,6 @@ function getZip() {
   var realLocation = location.replace("," , "");
 
   zipArray.push(realLocation);
-  // $('#city').empty();
-  // $('#state').empty();
   saveToStorage();
   updateList();
   getForecast();
@@ -60,11 +58,6 @@ function updateList() {
 
 function deleteLocation() {
   $(this).closest('li').remove();
-  // localStorage.removeItem($this);
-  //splice method to splice on delete from DOM that array
-  // grab index from of what's clicked
-  //splice array
-  //saveToStorage()
 }
 
 function getPastLocation() {
@@ -105,12 +98,8 @@ function getForecast() {
       var $state = $('<p>').text(state);
       $('.pastCity').append($city);
       $('.pastState').append($state);
-      //group by day, duplicate functionality
-      //.map append all three things per day
-      //tie all appending per day into one function
-      for(var i = 0; i < 3; i++) {
 
-      }
+
       var $highDay1 = $('<p>').text("Hi " +  data.forecast.simpleforecast.forecastday[0].high.fahrenheit);
       var $highDay2 = $('<p>').text("Hi " + data.forecast.simpleforecast.forecastday[1].high.fahrenheit);
       var $highDay3 = $('<p>').text("Hi " + data.forecast.simpleforecast.forecastday[2].high.fahrenheit);
@@ -140,8 +129,6 @@ function getForecast() {
 }
 
 function clearHouse() {
-  // $('#city').val();
-  // $('#state').val();
   $('.forecast1').empty();
   $('.forecast2').empty();
   $('.forecast3').empty();
