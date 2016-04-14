@@ -60,9 +60,6 @@ function updateList() {
 
 function deleteLocation() {
   $(this).closest('li').remove();
-  // var $this = $(this);
-  // $this.closest('li').remove();
-  // localStorage.removeItem($this);
 }
 
 function getPastLocation() {
